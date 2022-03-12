@@ -1,0 +1,21 @@
+<h1>Recipe Listing Page</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name:</th>
+            <th>Ingredients:</th>
+            <th>Instructions:</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @recipes.each do |recipe| %>
+        <tr>
+            <td><%= recipe.name%></td>
+            <td><%= recipe.ingredients%></td>
+            <td><%= recipe.instructions%></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
