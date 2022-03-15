@@ -1,0 +1,27 @@
+<h1>Create a new recipe!</h1>
+<% if @recipe.errors.any? %>
+<% @recipe.errors.any? %> <% @recipe.errors.full_messages.each do |message| %>
+<p><%= message %></p>
+<% end %>
+<% end %>
+
+
+<%= form_with(model: @recipe, url: recipes_path) do |f| %>
+    <p>
+        <%= f.label :name, "Name: " %><br>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :ingredients, "Ingredients: " %><br>
+        <%= f.text_area :name %>
+    </p>
+    <p>
+        <%= f.label :istructions, "Instructions: " %><br>
+        <%= f.text_area :instructions %>
+    </p>
+
+    <% f.submit "Save Recipe" %>
+    
+<% end %>
+
+
