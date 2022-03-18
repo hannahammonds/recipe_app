@@ -3,3 +3,6 @@
 <p><strong>Name: </strong><%= @recipe.name %></p>
 <p><strong>Name: </strong><%= @recipe.ingredients %></p>
 <p><strong>Name: </strong><%= @recipe.instructions %></p>
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Delete', recipe_path(@recipe), method: :delete, data: {confrim: "Are you sure you want to delete?"} %> |
+<%= link_to 'Return to Recipes Page', recipes_path %>

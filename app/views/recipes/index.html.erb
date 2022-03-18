@@ -15,9 +15,11 @@
             <td><%= recipe.name%></td>
             <td><%= recipe.ingredients%></td>
             <td><%= recipe.instructions%></td>
-            <td><%= link_to 'Show', recipe_path(recipe) %>/td>
-            <td><%= link_to 'Delete', recipe_path(recipe), method: :delete %>/td>
+            <td><%= link_to 'Show', recipe_path(recipe) %> </td>
+            <td><%= link_to 'Edit', edit_recipe_path(recipe) %> </td>
+            <td><%= link_to 'Delete', recipe_path(recipe), method: :delete %> </td>
         </tr>
         <% end %>
     </tbody>
 </table>
+<td><%= link_to 'Create New Recipe', new_recipe_path %> </td>
