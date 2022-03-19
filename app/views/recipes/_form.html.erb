@@ -1,7 +1,7 @@
 <% if @recipe.errors.any? %>
-<% @recipe.errors.any? %> <% @recipe.errors.full_messages.each do |message| %>
-<p><%= message %></p>
-<% end %>
+    <% @recipe.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+    <% end %>
 <% end %>
 
 
@@ -19,6 +19,6 @@
         <%= f.text_area :instructions %>
     </p>
 
-    <%= f.submit "Update Recipe" %>
+    <%= f.submit "Save Recipe" %>
     
 <% end %>
