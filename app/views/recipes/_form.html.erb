@@ -1,24 +1,24 @@
 <% if @recipe.errors.any? %>
-    <% @recipe.errors.full_messages.each do |message| %>
-    <p><%= message %></p>
-    <% end %>
+  <% @recipe.errors.full_messages.each do |message| %>
+  <p><%= message %></p>
+  <% end %>
 <% end %>
 
 
 <%= form_with(model: @recipe) do |f| %>
-    <p>
-        <%= f.label :name, "Name: " %><br>
-        <%= f.text_field :name %>
-    </p>
-    <p>
-        <%= f.label :ingredients, "Ingredients: " %><br>
-        <%= f.text_area :ingredients %>
-    </p>
-    <p>
-        <%= f.label :istructions, "Instructions: " %><br>
-        <%= f.text_area :instructions %>
-    </p>
+  <p>
+    <%= f.label :name, "Name: " %><br>
+      <%= f.text_field :name %>
+  </p>
+  <p>
+      <%= f.label :ingredients, "Ingredients: " %><br>
+      <%= f.text_area :ingredients %>
+  </p>
+  <p>
+      <%= f.label :istructions, "Instructions: " %><br>
+      <%= f.text_area :instructions %>
+  </p>
 
-    <%= f.submit "Save Recipe" %>
+  <%= f.submit "Save Recipe" %>
     
 <% end %>
