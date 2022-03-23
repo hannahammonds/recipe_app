@@ -1,2 +1,21 @@
-@import "bootstrap/dist/css/bootstrap"
+@import "bootstrap/dist/css/bootstrap";
 
+.navbar {
+    background-color: orange;
+}
+
+#home-container {
+    background-image: asset-url('kitchen.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+}
+
+#about-container {
+    background-image: asset-url('utensils.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
