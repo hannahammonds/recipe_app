@@ -1,3 +1,4 @@
+<div class="container">
 <% if @recipe.errors.any? %>
   <% @recipe.errors.full_messages.each do |message| %>
   <p><%= message %></p>
@@ -22,3 +23,4 @@
   <%= f.submit "Save Recipe" %>
     
 <% end %>
+</div>

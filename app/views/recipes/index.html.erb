@@ -1,25 +1,28 @@
-<h1>Recipe Listing Page</h1>
-
-<table>
-    <thead>
-        <tr>
-            <th>Name:</th>
-            <th>Ingredients:</th>
-            <th>Instructions:</th>
-        </tr>
-    </thead>
-
-    <tbody>
+<h1 style="font-size: 5rem; text-align:center" id="library">Recipe Library</h1>
+<div class="container">
+    <div class="row">
         <% @recipes.each do |recipe| %>
-        <tr>
-            <td><%= recipe.name%></td>
-            <td><%= recipe.ingredients%></td>
-            <td><%= recipe.instructions%></td>
-            <td><%= link_to 'Show', recipe_path(recipe) %> </td>
-            <td><%= link_to 'Edit', edit_recipe_path(recipe) %> </td>
-            <td><%= link_to 'Delete', recipe_path(recipe), method: :delete %> </td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
-<td><%= link_to 'Create New Recipe', new_recipe_path %> </td>
+        <div class="col-md-3">
+        <div class="card">
+            <img
+            src="https://media.istockphoto.com/photos/blank-recipe-book-on-wooden-table-picture-id481482102?b=1&k=20&m=481482102&s=170667a&w=0&h=68rhfYQV0RU3JLXrF6T1T7tWQQ4nzb24fMZ-KxBy8Hk="
+            class="card-img-top"
+            alt="..."
+            />
+            <div class="card-body text-center">
+                <h5 class="card-title"><%= recipe.name%></h5>
+                <p class="card-text">Ingredients: <%= recipe.ingredients %></p>
+                <p class="card-text">Instructions: <%= recipe.instructions %></p>
+                <%= link_to 'Edit', edit_recipe_path(recipe), class:"link btn btn-outline-success" %>
+                <%= link_to 'Show', recipe_path(recipe), class:"link btn btn-outline-warning" %>
+                <%= link_to 'Delete', recipe_path(recipe), method: :delete, class:"link btn btn-outline-dark" %>
+
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last Updated</small>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+</div>
