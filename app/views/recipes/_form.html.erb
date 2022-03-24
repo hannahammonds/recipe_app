@@ -1,26 +1,22 @@
-<div class="container">
-<% if @recipe.errors.any? %>
-  <% @recipe.errors.full_messages.each do |message| %>
-  <p><%= message %></p>
-  <% end %>
-<% end %>
+<div class="container text-center">
+  <% render 'shared/errors' %>
 
-
-<%= form_with(model: @recipe) do |f| %>
-  <p>
-    <%= f.label :name, "Name: " %><br>
-      <%= f.text_field :name %>
-  </p>
-  <p>
-      <%= f.label :ingredients, "Ingredients: " %><br>
-      <%= f.text_area :ingredients %>
-  </p>
-  <p>
-      <%= f.label :istructions, "Instructions: " %><br>
-      <%= f.text_area :instructions %>
-  </p>
-
-  <%= f.submit "Save Recipe" %>
+  <div style="margin: 0 25%; width: 50%" id="form-container">
     
-<% end %>
+    <%= form_with(model: @recipe) do |f| %>
+      <div class="mb-3">
+        <%= f.label :name, "Name: " %><br>
+          <%= f.text_field :name %>
+      </div>
+      <div class="mb-3">
+          <%= f.label :ingredients, "Ingredients: " %><br>
+          <%= f.text_area :ingredients %>
+      </div>
+      <div class="mb-3">
+          <%= f.label :istructions, "Instructions: " %><br>
+          <%= f.text_area :instructions %>
+      </div>
+        <%= f.submit "Save Recipe", class:"link btn btn-primary"%>
+  </div>   
+  <% end %>
 </div>

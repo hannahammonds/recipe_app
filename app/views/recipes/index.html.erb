@@ -13,8 +13,8 @@
                 <h5 class="card-title"><%= recipe.name%></h5>
                 <p class="card-text">Ingredients: <%= recipe.ingredients %></p>
                 <p class="card-text">Instructions: <%= recipe.instructions %></p>
-                <%= link_to 'Edit', edit_recipe_path(recipe), class:"link btn btn-outline-success" %>
                 <%= link_to 'Show', recipe_path(recipe), class:"link btn btn-outline-warning" %>
+                <%= link_to 'Edit', edit_recipe_path(recipe), class:"link btn btn-outline-success" %>
                 <%= link_to 'Delete', recipe_path(recipe), method: :delete, class:"link btn btn-outline-dark" %>
 
             </div>
