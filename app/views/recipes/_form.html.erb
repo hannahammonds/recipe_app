@@ -1,22 +1,31 @@
-<div class="container text-center">
-  <% render 'shared/errors' %>
-
-  <div style="margin: 0 25%; width: 50%" id="form-container">
-    
-    <%= form_with(model: @recipe) do |f| %>
-      <div class="mb-3">
-        <%= f.label :name, "Name: " %><br>
-          <%= f.text_field :name %>
+<div >
+  <div class="container text-center"style="margin: 0 25%; width: 50%" id="form-container">
+    <%= render 'shared/errors', class:"text-align-right" %>
+    <%= form_with(model: @recipe, local:true) do |f| %>
+      
+      <div class="form-group row">
+        <%= f.label :name, class: "col-2 col-form-label text-light"%>
+        <div class="col-10">
+          <%= f.text_field :name, class: "form-control shadow rounded", placeholder: "Name of Recipe" %>
+        </div>
       </div>
-      <div class="mb-3">
-          <%= f.label :ingredients, "Ingredients: " %><br>
-          <%= f.text_area :ingredients %>
+      <br>
+      <div class="form-group row">
+            <%= f.label :ingredients, "Ingredients: ", class: "col-2 col-form-label text-light"%><br>
+          <div class="col-10">
+            <%= f.text_area :ingredients, rows: 10, class: "form-control shadow rounded", placeholder: "List Ingredients Here" %>
+          </div>
       </div>
-      <div class="mb-3">
-          <%= f.label :istructions, "Instructions: " %><br>
-          <%= f.text_area :instructions %>
+      <br>
+      <div class="form-group row">
+        <%= f.label :istructions, "Instructions: ", class: "col-2 col-form-label text-light"%><br>
+        <div class="col-10">
+          <%= f.text_area :instructions, rows: 10, class: "form-control shadow rounded", placeholder: "How to Make your Recipe" %>
+        </div>
       </div>
-        <%= f.submit "Save Recipe", class:"link btn btn-primary"%>
+      <br>
+        <%= f.submit "Save Recipe", class:"link btn btn-outline-primary"%>
   </div>   
   <% end %>
 </div>
+
