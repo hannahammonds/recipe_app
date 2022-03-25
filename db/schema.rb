@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_11_013342) do
+ActiveRecord::Schema.define(version: 2022_03_25_010559) do
 
   create_table "recipes", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_03_11_013342) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "ingredients"
     t.text "instructions"
+    t.string "image_path", default: "https://image.freepik.com/free-photo/cutting-board-with-food_1112-372.jpg"
   end
 
 end

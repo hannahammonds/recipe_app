@@ -18,13 +18,20 @@
       </div>
       <br>
       <div class="form-group row">
-        <%= f.label :istructions, "Instructions: ", class: "col-2 col-form-label text-light"%><br>
+        <%= f.label :instructions, "Instructions: ", class: "col-2 col-form-label text-light"%><br>
         <div class="col-10">
-          <%= f.text_area :instructions, rows: 10, class: "form-control shadow rounded", placeholder: "How to Make your Recipe" %>
+          <%= f.text_area :instructions, rows: 10, class: "form-control shadow rounded", placeholder: "Tell us how to make your recipe" %>
         </div>
       </div>
       <br>
-        <%= f.submit "Save Recipe", class:"link btn btn-outline-primary"%>
+      <div class="form-group row">
+        <%= f.label :image_path, "Image URL: ", class: "col-2 col-form-label text-light"%><br>
+        <div class="col-10">
+          <%= f.text_area :image_path, class: "form-control shadow rounded" %>
+        </div>
+      </div>
+      <br>
+        <%= f.submit "Save Recipe", class:"link btn btn-outline-success"%>
   </div>   
   <% end %>
 </div>
