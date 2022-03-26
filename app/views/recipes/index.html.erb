@@ -4,11 +4,8 @@
         <% @recipes.each do |recipe| %>
         <div class="col-md-3 mb-3">
         <div class="card">
-            <img
-            src="<%= image_tag recipe.image_path %>"
-            class="card-img-top"
-            alt="..."
-            />
+            <%= image_tag recipe.image_path, class: "card-img-top" %>
+            
             <div class="card-body text-center">
                 <h5 class="card-title"><%= recipe.name%></h5>
                 <p class="card-text">Ingredients: <%= recipe.ingredients %></p>
