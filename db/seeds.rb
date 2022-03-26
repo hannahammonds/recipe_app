@@ -5,6 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-(1..10).each do |i| 
-    Recipe.create(name: "name #{i}", ingredients: "ingredient #{i}", instructions: "instructions #{i}")
+require 'faker'
+images = [
+    "https://tse4.mm.bing.net/th?id=OIP.Q8DkndBzfTOhULcFiKn2NQHaFD&pid=Api&P=0&w=267&h=182",
+    "https://tse4.mm.bing.net/th?id=OIP.ay2rwpFv_9BCxqqjze-QkwHaE8&pid=Api&P=0&w=274&h=182",
+    "https://tse3.mm.bing.net/th?id=OIP.hrtc1-lKzGnxfqA3SeA0_gHaDJ&pid=Api&P=0&w=427&h=181",
+    "https://tse2.explicit.bing.net/th?id=OIP.BC7ArCQQZ7CKSgSC0qi6rAHaD4&pid=Api&P=0&w=302&h=158",
+]
+(1..100).each do |i| 
+    Recipe.create(name: Faker::Food.dish, ingredients: Faker::Food.ingredient, instructions: Faker::Food.description, image_path: images[Random.rand(4)])
 end 
