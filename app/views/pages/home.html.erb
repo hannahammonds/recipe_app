@@ -5,10 +5,31 @@
         <h1 class="display-4 text-center mt-50">Welcome to the Seasonal Plate</h1>
         <h2 class="lead text text-center">Find recipes using fresh ingredients by season</h2>
         <hr class="my-4">
+        <br>
+        <br>
+        <br>
         <div class="text-center">
-        <a class="btn btn-success btn-lg text-center">Sign Up</a>
-    </div>
+          <a class="btn btn-success btn-lg text-center">Sign Up</a>
+        </div>
     </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+        <% get_eight_recipes.each do |recipe| %>
+        <div class="col-md-3 mb-3">
+        <div class="card">
+            <%= image_tag recipe.image_path, class: "card-img-top" %>
+            
+            <div class="card-body text-center">
+                <h5 class="card-title"><%= link_to "#{recipe.name}", recipe_path(recipe)%></h5>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last Updated</small>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+</div>
 </div>
