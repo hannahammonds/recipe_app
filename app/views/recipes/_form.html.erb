@@ -1,6 +1,6 @@
 <div >
   <div class="container text-center"style="margin: 0 25%; width: 50%" id="form-container">
-    <%= render 'shared/errors', class:"text-align-right" %>
+    <%= render 'shared/errors', obj: @recipe, class:"text-align-right" %>
     <%= form_with(model: @recipe, local:true) do |f| %>
       
       <div class="form-group row">
