@@ -5,7 +5,8 @@
         <div class="col-md-3 mb-3">
         <div class="card">
             <%= image_tag recipe.image_path, class: "card-img-top" %>
-            
+            <div class="card-header">
+            <%= "by " + recipe.user.username if recipe.user %>
             <div class="card-body text-center">
                 <h5 class="card-title"><%= recipe.name%></h5>
                 <p class="card-text">Ingredients: <%= recipe.ingredients %></p>
@@ -17,6 +18,7 @@
             </div>
             <div class="card-footer">
                 <small class="text-muted">Last Updated</small>
+            </div>
             </div>
         </div>
     </div>

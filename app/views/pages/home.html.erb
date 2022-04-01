@@ -25,7 +25,7 @@
                 <h5 class="card-title"><%= link_to "#{recipe.name}", recipe_path(recipe)%></h5>
             </div>
             <div class="card-footer">
-                <small class="text-muted">Last Updated</small>
+                <small class="text-muted"><%= recipe.updated_at.strftime("%Y-%m-%d") %></small>
             </div>
         </div>
     </div>
