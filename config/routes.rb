@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   get 'index', to: 'recipes#index'
   
   resources :recipes
+  
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+
 end
