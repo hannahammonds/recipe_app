@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         else
             render 'new' 
         end
+    end
 
     def edit 
         @user = User.find(params[:id]) 
@@ -29,4 +30,5 @@ class UsersController < ApplicationController
         params.require(:user).permit(:username, :email, :password) 
     end
 end
+
 
