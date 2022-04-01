@@ -31,7 +31,7 @@
         </div>
       </div>
       <br>
-        <%= f.submit "Save Recipe", class:"link btn btn-outline-success"%>
+        <%= f.submit(@book.new_record? ? "Create Recipe" : "Update Recipe", class:"link btn btn-outline-success) "%>
   </div>   
   <% end %>
 </div>
