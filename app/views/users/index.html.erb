@@ -9,7 +9,7 @@
             <div class="card-body text-center">
                 <h5 class="card-title"><%= pluralize(user.recipes.count, "Recipe") %></h5>
                 <%= link_to 'Show Profile', user_path(user), class:"link btn btn-outline-warning" %>
-                  <% if logged_in? && user == current_user 
+                  <% if logged_in? && user == current_user %>
                     <%= link_to 'Edit Profile', edit_user_path(user), class:"link btn btn-outline-success" %>
                   <% end %>
             </div>
