@@ -1,0 +1,24 @@
+<h1 class="text-center">Users</h1>
+<div class="container">
+    <div class="row">
+        <% @users.each do |user| %>
+        <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-header">
+            <%= user.username %>
+            <div class="card-body text-center">
+                <h5 class="card-title"><%= user.recipe.count %></h5>
+                <%= link_to 'Show Profile', user_path(user), class:"link btn btn-outline-warning" %>
+                <%= link_to 'Edit Profile', edit_user_path(user), class:"link btn btn-outline-success" %>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last Updated</small>
+            </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    
+</div>
+</div>
+<br>
