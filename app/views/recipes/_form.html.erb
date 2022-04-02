@@ -4,35 +4,44 @@
     <%= form_with(model: @recipe, local:true) do |f| %>
       
       <div class="form-group row">
+        <div class="col-3">
         <%= f.label :name, class: "col-2 col-form-label text-light"%>
-        <div class="col-10">
-          <%= f.text_field :name, class: "form-control shadow rounded", placeholder: "Name of Recipe" %>
+        </div>
+        <div class="col-9">
+        <%= f.text_field :name, class: "form-control shadow rounded", placeholder: "Name of Recipe" %>
         </div>
       </div>
       <br>
       <div class="form-group row">
-            <%= f.label :ingredients, "Ingredients: ", class: "col-2 col-form-label text-light"%><br>
-          <div class="col-10">
-            <%= f.text_area :ingredients, rows: 10, class: "form-control shadow rounded", placeholder: "List Ingredients Here" %>
-          </div>
+        <div class="col-3">
+        <%= f.label :ingredients, "Ingredients: ", class: "col-2 col-form-label text-light"%><br>
+        </div>
+        <div class="col-9">
+        <%= f.text_area :ingredients, rows: 10, class: "form-control shadow rounded", placeholder: "List Ingredients Here" %>
+      </div>
       </div>
       <br>
       <div class="form-group row">
-        <%= f.label :instructions, "Instructions: ", class: "col-2 col-form-label text-light"%><br>
-        <div class="col-10">
-          <%= f.text_area :instructions, rows: 10, class: "form-control shadow rounded", placeholder: "Tell us how to make your recipe" %>
+        <div class="col-3">
+        <%= f.label :instructions, "Instructions: ", class: "col-2 col-form-label text-light" %><br>
+        </div>
+        <div class="col-9">
+        <%= f.text_area :instructions, rows: 10, class: "form-control shadow rounded", placeholder: "Tell us how to make your recipe" %>
         </div>
       </div>
       <br>
       <div class="form-group row">
-        <%= f.label :image_path, "Image URL: ", class: "col-2 col-form-label text-light"%><br>
-        <div class="col-10">
-          <%= f.text_area :image_path, class: "form-control shadow rounded" %>
+        <div class="col-3">
+        <%= f.label :image_path, "Image URL: ", class: "col-2 col-form-label text-light" %><br>
+        </div>
+        <div class="col-9">
+        <%= f.text_area :image_path, class: "form-control shadow rounded" %>
         </div>
       </div>
       <br>
-        <%= f.submit(@book.new_record? ? "Create Recipe" : "Update Recipe", class:"link btn btn-outline-success) "%>
-  </div>   
-  <% end %>
+        <%= f.submit(@recipe.new_record? ? "Create Recipe" : "Update Recipe", class:"link btn btn-outline-success") %>
+        <% end %>
+      </div>   
+  
 </div>
 
