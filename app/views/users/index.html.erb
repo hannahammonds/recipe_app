@@ -9,9 +9,12 @@
             <div class="card-body text-center">
                 <h5 class="card-title"><%= pluralize(user.recipes.count, "Recipe") %></h5>
                 <%= link_to 'Show Profile', user_path(user), class:"link btn btn-outline-warning" %>
-                  <% if logged_in? && user == current_user %>
+                  <% if logged_in? && (user == current_user || current_user.admin?) %>
                     <%= link_to 'Edit Profile', edit_user_path(user), class:"link btn btn-outline-success" %>
                   <% end %>
+                  <% if logged_in? && current_user.admin? %>
+                    <%= link_to 'Delete Profile', user_path(user), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure you want to delete" + user.username + "?"} %> 
+                  <% end %> 
             </div>
             <div class="card-footer">
                 <small class="text-muted">Last Updated</small>

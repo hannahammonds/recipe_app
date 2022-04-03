@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
  end
 
  def require_same_user 
-    if helpers.current_user != @recipe.user 
-      flash[:notice] = "You can only edit or delete your own recipes."
-      redirect_to @recipe 
+    if helpers.current_user != @recipe.user && !helpers.current_user.admin?
+      flash[:notice] = "You can only edit your own recipes."
+      redirect_to helpers.current_user 
     end
   end 
 

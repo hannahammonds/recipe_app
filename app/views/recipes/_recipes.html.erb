@@ -11,7 +11,7 @@
                 <p class="card-text">Ingredients: <%= recipe.ingredients %></p>
                 <p class="card-text">Instructions: <%= recipe.instructions %></p>
                 <%= link_to 'Show', recipe_path(recipe), class:"link btn btn-outline-warning" %>
-                <% if logged_in? && recipe.user == current_user %>
+                <% if logged_in? && recipe.user == current_user || current_user.admin %>
                     <%= link_to 'Edit', edit_recipe_path(recipe), class:"link btn btn-outline-success" %>
                     <%= link_to 'Delete', recipe_path(recipe), method: :delete, class:"link btn btn-outline-dark" %>
                 <% end %> 
