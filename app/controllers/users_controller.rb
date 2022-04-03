@@ -1,6 +1,8 @@
 class UsersController < ApplicationController 
     before_action :set_user, only: [:show, :edit, :update]
-    
+    before_action :require_user, :require_same_user, only: [:edit, :update, :destroy] 
+
+
     def index 
         @users = User.all
     end
@@ -30,6 +32,13 @@ class UsersController < ApplicationController
 
     def update 
 
+    end
+
+    def destroy 
+        @user.destroy 
+        session[:user_id] = nil if @user == current_user
+        flash[:notice] = "Account and all information related to your account has been successfully deleted!" 
+        redirect_to root_path 
     end
 
     private
