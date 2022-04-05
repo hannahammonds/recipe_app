@@ -2,7 +2,6 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update]
     before_action :require_user, :require_same_user, only: [:edit, :update, :destroy] 
 
-
     def index 
         @users = User.all
     end
@@ -31,7 +30,12 @@ class UsersController < ApplicationController
     end
 
     def update 
-
+        if @user.update(user_params)
+            flash[:notice] = "Your account information was successfully updated"
+            redirect_to @user
+        else
+            render 'edit'
+        end
     end
 
     def destroy 
@@ -51,9 +55,9 @@ class UsersController < ApplicationController
         end
 
         def require_same_user 
-            if helpers.current_user != @recipe.user && !helpers.current_user.admin?
+            if helpers.current_user != @user && !helpers.current_user.admin?
               flash[:notice] = "You can only edit information from your own account."
-              redirect_to helpers.current_user 
+              #redirect_to helpers.current_user 
             end
         end
 end
