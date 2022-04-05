@@ -5,9 +5,11 @@
         <div class="card">
             <%= image_tag recipe.image_path, class: "card-img-top" %>
             <div class="card-header">
-            <%= "by " + recipe.user.username if recipe.user %>
+            <% if recipe.user %>
+            <%= link_to recipe.user.username, user_path(recipe.user)  %>
             <div class="card-body text-center">
                 <h5 class="card-title"><%= recipe.name%></h5>
+            <% end %>
                 <p class="card-text">Ingredients: <%= recipe.ingredients %></p>
                 <p class="card-text">Instructions: <%= recipe.instructions %></p>
                 <%= link_to 'Show', recipe_path(recipe), class:"link btn btn-outline-warning" %>
