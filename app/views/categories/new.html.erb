@@ -1,0 +1,21 @@
+<div >
+    <h1 class="text-center">Create a New Category</h1>
+
+    <div class="container text-center"style="margin: 0 25%; width: 50%" id="form-container">
+      <%= render 'shared/errors', obj: @category, class:"text-align-right" %>
+      <%= form_with(model: @category) do |f| %>
+        
+        <div class="form-group row">
+          <%= f.label :name, "Category Name", class: "col-2 col-form-label text-light"%>
+          <div class="col-10">
+            <%= f.text_field :name, class: "form-control shadow rounded", placeholder: "Enter a Category" %>
+          </div>
+        </div>
+        <br>
+        
+          <%= f.submit("Create Category" , class:"link btn btn-outline-success") %>
+    </div>   
+    <% end %>
+  </div>
+  
+  
