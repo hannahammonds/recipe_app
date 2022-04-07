@@ -1,0 +1,7 @@
+<h1 class="text-center">List of Categories</h1>
+
+<div class="container text-center">
+  <% @categories.each do |category| %> 
+    <%= link_to category.name, category_path(category), style:"border: 1px solid black; width:50%; margin: 0 25%; padding: 5%; display: block; font-size: 3rem;text-decoration: none" %>
+  <%end %>
+</div>
