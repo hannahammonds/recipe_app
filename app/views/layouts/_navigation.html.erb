@@ -9,6 +9,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Recipes
@@ -19,10 +20,21 @@
               <% if logged_in? %>
                 <li><%= link_to "Create New Recipe", new_recipe_path, class: "dropdown-item" %></li>
               <% end %> 
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories 
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><%= link_to "View Categories", categories_path, class: "dropdown-item" %></li>
+              <% if logged_in? && current_user.admin? %>
+                <li><%= link_to "Create a New Category", new_category_path, class: "dropdown-item" %></li>
+              <% end %> 
+            </ul>
+          </li>
+
           <li class="nav-item"><%= link_to "Users", users_path, class: "nav-link" %>
           </li>
           <% if logged_in? %>
@@ -46,7 +58,7 @@
                 "dropdown-item"%>
               </li>
               <li>
-                <%= link_to "Delete Profile", user_path(@current_user), class:
+                <%= button_to "Delete Profile", user_path(@current_user), class:
                 "dropdown-item"%>
               </li>
             </ul>
@@ -54,7 +66,7 @@
           <% end %>
 
           <% if logged_in? %>
-          <li class="nav-item"><%= link_to "Log Out", logout_path, class: "nav-link", method: :delete, data: { confirm: "Are you sure you want to log out?" } %>
+          <li class="nav-item"><%= button_to "Log Out", logout_path, class: "nav-link", method: :delete %>
           </li> 
           <% else %>
           <li class="nav-item"><%= link_to "Log In", login_path, class: "nav-link" %>

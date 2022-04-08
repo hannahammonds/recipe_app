@@ -12,11 +12,13 @@
       <li class="list-group-item"><strong>Instructions: </strong><%= @recipe.instructions %></li>
     </ul>
     <div class="card-body text-center">
+     
         <%= link_to 'Return', recipes_path, class:"link btn btn-outline-warning"%>
         <% if logged_in? && (@recipe.user == current_user || current_user.admin) %>
           <%= link_to 'Edit', edit_recipe_path(@recipe), class:"link btn btn-outline-success" %>
-          <%= link_to 'Delete', recipe_path(@recipe), method: :delete, data: {confrim: "Are you sure you want to delete?"}, class:"link btn btn-outline-dark" %>
+          <%= button_to 'Delete', recipe_path(@recipe), method: :delete, data: {confrim: "Are you sure you want to delete?"}, class:"link btn btn-outline-dark" %>
         <% end %>
+    
     </div>
   </div>
   </div>
