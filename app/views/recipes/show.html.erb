@@ -8,7 +8,7 @@
     <div class="card-header text-center">
       <%= "by " + @recipe.user.username if @recipe.user %>
       <% if @recipe.categories.any? %>
-        <div><%= render @book.categories %> </div>
+        <div><%= render @recipe.categories %> </div>
       <% end %>
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><strong>Ingredients: </strong><%= @recipe.ingredients %></li>
