@@ -53,5 +53,6 @@ def set_recipe
 end
 
 def recipe_params 
-    params.require(:recipe).permit(:name, :ingredients, :instructions, :image_path)
+    params.require(:recipe).permit(:name, :ingredients, :instructions, :image_path, category_ids: [])
+    
 end
