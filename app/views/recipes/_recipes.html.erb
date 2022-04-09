@@ -6,6 +6,7 @@
             <%= image_tag recipe.image_path, class: "card-img-top" %>
             <div class="card-header">
             <%= recipe.user.username if recipe.user  %>
+            <div><%= render book.categories %></div>
             <div class="card-body text-center">
                 <h5 class="card-title"><%= recipe.name%></h5>
                 <p class="card-text">Ingredients: <%= recipe.ingredients %></p>
