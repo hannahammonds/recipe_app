@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
     def destroy 
         @user.destroy 
-        session[:user_id] = nil if @user == current_user
+        session[:user_id] = nil if @user == helpers.current_user
         flash[:notice] = "Account and all information related to your account has been successfully deleted!" 
         redirect_to root_path 
     end
@@ -54,12 +54,7 @@ class UsersController < ApplicationController
             @user = User.find(params[:id])
         end
 
-        def require_same_user 
-            if helpers.current_user != @user && !helpers.current_user.admin?
-              flash[:alert] = "You can only edit information from your own account."
-              redirect_to helpers.current_user 
-            end
-        end
+        
 end
 
 
