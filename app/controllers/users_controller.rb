@@ -56,7 +56,7 @@ class UsersController < ApplicationController
 
         def require_same_user 
             if helpers.current_user != @user && !helpers.current_user.admin?
-              flash[:notice] = "You can only edit information from your own account."
+              flash[:alert] = "You can only edit information from your own account."
               redirect_to helpers.current_user 
             end
         end
