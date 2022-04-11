@@ -1,1 +1,3 @@
-<h1 class="text-center">Category: <%= @category.name %></h1>
+<h1 class="text-center"><%= @category.name %> Recipes</h1>
+
+<%= render 'recipes/recipes', recipes: @category.recipes %> 
