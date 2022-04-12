@@ -13,7 +13,7 @@
                     <%= link_to 'Edit Profile', edit_user_path(user), class:"link btn btn-outline-success" %>
                   <% end %>
                   <% if logged_in? && current_user.admin? %>
-                    <%= button_to 'Delete Profile', user_path(user), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure you want to delete" + user.username + "?"} %> 
+                    <%= button_to 'Delete Profile', user_path(user), class: "btn btn-outline-danger" form: {style: "display: inline-block"}, method: :delete, data: {confirm: "Are you sure you want to delete" + user.username + "?"} %> 
                   <% end %> 
             </div>
             <div class="card-footer">
