@@ -8,7 +8,7 @@
             <%=  recipe.user.username if recipe.user  %>
             <div><%= render recipe.categories %></div>
             <div class="card-body text-center">
-                <h5 class="card-title"><%= recipe.name%></h5>
+                <h5 class="card-title fs-3"><%= link_to "#{recipe.name}", recipe_path(recipe)%></h5>
                 <p class="card-text">Ingredients: <%= recipe.ingredients %></p>
                 <p class="card-text">Instructions: <%= recipe.instructions %></p>
                 <%= link_to 'Show', recipe_path(recipe), class:"link btn btn-outline-warning" %>
@@ -17,7 +17,7 @@
                     <%= link_to 'Delete', recipe_path(recipe), method: :delete, class:"link btn btn-outline-dark" %>
                 <% end %> 
             </div>
-            <div class="card-footer">
+            <div class="card-footer fs-6">
                 <small class="text-muted">Updated <%= time_ago_in_words(recipe.updated_at) %></small>
             </div>
             </div>
