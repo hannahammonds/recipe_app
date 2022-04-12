@@ -18,7 +18,7 @@
                 <% end %> 
             </div>
             <div class="card-footer">
-                <small class="text-muted">Last Updated</small>
+                <small class="text-muted">Updated <%= time_ago_in_words(recipe.updated_at) %></small>
             </div>
             </div>
         </div>
