@@ -5,7 +5,7 @@
         <div class="card">
             <%= image_tag recipe.image_path, class: "card-img-top" %>
             <div class="card-header">
-            <%=  recipe.user.username if recipe.user  %>
+            by: <%= recipe.user.username if recipe.user  %>
             <div><%= render recipe.categories %></div>
             <div class="card-body text-center">
                 <h5 class="card-title fs-3"><%= link_to "#{recipe.name}", recipe_path(recipe)%></h5>
