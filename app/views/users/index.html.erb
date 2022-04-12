@@ -4,7 +4,7 @@
         <% @users.each do |user| %>
         <div class="col-md-3 mb-3">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header fs-3">
             <%= user.username %>
             <div class="card-body text-center">
                 <h5 class="card-title"><%= pluralize(user.recipes.count, "Recipe") %></h5>
@@ -18,7 +18,7 @@
                     <%= button_to 'Delete Profile', user_path(user), class: "btn btn-outline-danger", form: {style: "display: inline-block"}, method: :delete, data: {confirm: "Are you sure you want to delete" + user.username + "?"} %> 
                   <% end %> 
             </div>
-            <div class="card-footer">
+            <div class="card-footer fs-6">
                 <small class="text-muted">Updated <%= time_ago_in_words(user.updated_at) %></small>
             </div>
             </div>
