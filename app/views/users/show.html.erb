@@ -1,3 +1,4 @@
-<h1 class="text-center"><%= @user.username %> profile</h1>
-<h2 class="text-center">Recipes</h2>
+<h1 class="text-center"><%= @user.username %>'s Recipes</h1>
+<div class="div mt-4">
 <%= render 'recipes/recipes', recipes: @user.recipes %>
+</div>
