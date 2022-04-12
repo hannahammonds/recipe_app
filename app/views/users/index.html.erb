@@ -5,7 +5,7 @@
         <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-header fs-3">
-            <%= user.username %>
+            <%= link_to "#{user.username}", user_path(user)%>
             <div class="card-body text-center">
                 <h5 class="card-title"><%= pluralize(user.recipes.count, "Recipe") %></h5>
                 <%= link_to 'Show Profile', user_path(user), class:"link btn btn-outline-warning" %>
