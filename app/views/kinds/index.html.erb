@@ -1,0 +1,6 @@
+<h1 class="text-center">Recipe by Types</h1>
+
+<div class="container text-center"> 
+    <% @kinds.each do |kind| %>
+    <%= link_to kind.name, kind_path(kind), style:"border: 1px solid black; width:50%; margin: 0 25%; padding: 5%; display: block; font-size: 3rem;text-decoration: none"%>
+</div>

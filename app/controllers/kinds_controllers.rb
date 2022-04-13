@@ -1,7 +1,8 @@
 class KindsController < ApplicationController 
-    
-    def index 
+    before_action :require_admin, except: [:show, :index] 
 
+    def index 
+        @kinds = Kind.all 
     end
 
     def show 
@@ -26,6 +27,12 @@ class KindsController < ApplicationController
     private 
     def kind_params 
         params.require(:kind).permit(:name)
+    end
+
+    def require_admin 
+        if!(helpers.logged_in? && helpers.current_user.admin?)
+            flash[:alert] = "Only admins can perform this action." 
+            redirect_to kinds_path 
     end
 
 end

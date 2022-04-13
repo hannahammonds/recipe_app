@@ -3,6 +3,7 @@ require "test_helper"
 class KindsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @kind = Kind.create(name: "Appetizer") 
+    @admin = User.create(username: "admin", email: "admin@test.com", password: "admin", admin: true )
 
   end
 
@@ -12,11 +13,13 @@ class KindsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
+    sign_in(@admin)
     get new_kind_url
     assert_response :success
   end
 
   test "should create kind" do
+    sign_in(@admin) 
     assert_difference('Kind.count', 1) do
       post kinds_url, params: { kind: { name: "Soups" } }
     end
@@ -27,6 +30,14 @@ class KindsControllerTest < ActionDispatch::IntegrationTest
   test "should show kind" do
     get kind_url(@kind)
     assert_response :success
+  end
+
+  test "should not create kind if not admin" do 
+    assert_no_difference('Kind.count',1) do 
+      post kinds_url, params: { kind: { name: "Mains" } }
+    end
+
+    assert_redirected_to kinds_url 
   end
 
   # =begin test "should get edit" do
