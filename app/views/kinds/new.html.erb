@@ -1,0 +1,13 @@
+<h1 class="text-center">New Recipe Type</h1>
+
+<div style="margin: 0 25%; width: 50%">
+  <%= render 'shared/errors', obj: @kind %> 
+  
+  <%= form_with(model: @kind) do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, "Name:", class:"form-label", placeholder: "Enter a Recipe Type" %>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+  <%= form.submit("Create Recipe Type", class:"btn btn-primary") %> 
+  <% end %>
+</div>
