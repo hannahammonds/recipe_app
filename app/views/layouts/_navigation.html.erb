@@ -21,9 +21,9 @@
               <% if logged_in? %>
                 <li><%= link_to "Create New Recipe", new_recipe_path, class: "dropdown-item" %></li>
               <% end %> 
-              <% if logged_in? && current.user.admin? %>
+              <% if logged_in? && current_user.admin? %>
               <li>
-                <%= link_to "Create new Recipe Type", new_kind_path, class: "dropdown-item" %>
+                <%= link_to "Create New Recipe Type", new_kind_path, class: "dropdown-item" %>
               </li>
               <% end %> 
             </ul>

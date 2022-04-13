@@ -30,9 +30,10 @@ class KindsController < ApplicationController
     end
 
     def require_admin 
-        if!(helpers.logged_in? && helpers.current_user.admin?)
+        if !(helpers.logged_in? && helpers.current_user.admin?)
             flash[:alert] = "Only admins can perform this action." 
             redirect_to kinds_path 
+        end
     end
 
 end
