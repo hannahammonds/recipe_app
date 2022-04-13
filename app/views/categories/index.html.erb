@@ -4,10 +4,9 @@
       <% @categories.each do |category| %>
         <div class="col-md-3 mb-3">
         <div class="card">
-           
+           <%= image_tag category.image_path, class: "card-img-top" %>
             <div class="card-header">
-              <%= link_to category.name, category_path(category), style:"border: 1px solid black; width:50%; margin: 0 25%; padding: 5%; display: block; font-size: 3rem;text-decoration: none" %>
-
+              <%= link_to category.name, category_path(category), style:"font-size: 3rem" %>
             </div>
         </div>
     </div>

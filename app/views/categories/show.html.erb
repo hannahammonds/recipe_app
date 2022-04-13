@@ -1,3 +1,5 @@
 <h1 class="text-center"><%= @category.name %> Recipes</h1>
-
+<div class="text-center"> 
 <%= render 'recipes/recipes', recipes: @category.recipes %> 
+[<%= link_to 'Return to Seasonal Listings', categories_path, class: "text-secondary" %>]
+</div>
