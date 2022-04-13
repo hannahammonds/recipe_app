@@ -16,12 +16,16 @@
               <li><%= link_to "About", about_path, class: "dropdown-item" %></li>
               <li><%= link_to "Recipes", recipes_path, class: "dropdown-item" %></li>
               <li><%= link_to "Recipes by Season", categories_path, class: "dropdown-item" %></li>
-              <li>Recipes by Type</li>
+              <li><%= link_to "Recipes by Type", kinds_path, class: "dropdown-item" %></li>
               <li><%= link_to "Recipe Contributors", users_path, class: "dropdown-item" %></li>
               <% if logged_in? %>
                 <li><%= link_to "Create New Recipe", new_recipe_path, class: "dropdown-item" %></li>
               <% end %> 
-               
+              <% if logged_in? && current.user.admin? %>
+              <li>
+                <%= link_to "Create new Recipe Type", new_kind_path, class: "dropdown-item" %>
+              </li>
+              <% end %> 
             </ul>
           </li>
 

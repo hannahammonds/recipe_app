@@ -1,6 +1,16 @@
-<h1 class="text-center">Recipe by Types</h1>
-
-<div class="container text-center"> 
-    <% @kinds.each do |kind| %>
-    <%= link_to kind.name, kind_path(kind), style:"border: 1px solid black; width:50%; margin: 0 25%; padding: 5%; display: block; font-size: 3rem;text-decoration: none"%>
+<h1 class="text-center">Recipes by Type</h1>
+  <div class="container">
+    <div class="row">
+      <% @kinds.each do |kind| %>
+        <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-header">
+              <%= link_to kind.name, kind_path(kind), style:"font-size: 3rem" %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    
 </div>
+</div>
+<br>

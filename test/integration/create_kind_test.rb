@@ -3,6 +3,7 @@ require "test_helper"
 class CreateKindTest < ActionDispatch::IntegrationTest
   setup do 
     @admin = User.create(username: "admin1", email: "admin1@test.com", password: "admin", admin: true) 
+  end 
   
   test "get new test form and create kind" do 
     get "/kinds/new"
