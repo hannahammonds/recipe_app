@@ -5,7 +5,7 @@ class KindsController < ApplicationController
     end
 
     def show 
-
+        @kind = Kind.find(params[:id])
     end
 
     def new 
