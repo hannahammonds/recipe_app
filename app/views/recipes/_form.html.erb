@@ -54,7 +54,7 @@
         <%= f.label :kind, "Type: ", class: "col-2 col-form-label text-light" %><br>
         </div>
         <div class="col-9">
-        <%= f.collection_select(:kind_ids, kind.order(:name), :id, :name,
+        <%= f.collection_select(:kind_ids, Kind.order(:name), :id, :name,
         {prompt: "Select"}, {multiple: true, size: 3, class: "form-control shadow rounded"}) %>
         </div>
       </div>
