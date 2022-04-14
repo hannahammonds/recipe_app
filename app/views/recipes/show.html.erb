@@ -10,6 +10,9 @@
       <% if @recipe.categories.any? %>
         <div><%= render @recipe.categories %> </div>
       <% end %>
+      <% if @recipe.kinds.any? %>
+      <div><$= render @recipe.kinds %></div>
+      <% end %>
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><strong>Ingredients: </strong><%= @recipe.ingredients %></li>
       <li class="list-group-item"><strong>Instructions: </strong><%= @recipe.instructions %></li>
