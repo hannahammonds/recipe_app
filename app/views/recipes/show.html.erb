@@ -6,7 +6,7 @@
       <h5 class="card-title text-center"><strong><%= @recipe.name %></strong></h5>
     </div>
     <div class="card-header text-center">
-      <%= "by " @recipe.user.username if @recipe.user %>
+      <%= @recipe.user.username if @recipe.user %>
       <% if @recipe.categories.any? %>
         <div><%= render @recipe.categories %> </div>
       <% end %>

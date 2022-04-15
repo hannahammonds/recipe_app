@@ -1,1 +1,5 @@
 <h1 class="text-center"><%= @kind.name %></h1>
+<div class="text-center"> 
+    <%= render 'recipes/recipes', recipes: @kind.recipes %> 
+    [<%= link_to 'Return to Recipe Types', kinds_path, class: "text-secondary" %>]
+    </div>

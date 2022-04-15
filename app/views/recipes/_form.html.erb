@@ -45,7 +45,7 @@
         </div>
         <div class="col-9">
         <%= f.collection_select(:category_ids, Category.order(:name), :id, :name,
-        {prompt: "Select"}, {multiple: true, size: 3, class: "form-control shadow rounded"}) %>
+        {prompt: "Select a Season"}, {multiple: true, size: 3, class: "form-control shadow rounded"}) %>
         </div>
       </div>
       <br>
@@ -55,13 +55,15 @@
         </div>
         <div class="col-9">
         <%= f.collection_select(:kind_ids, Kind.order(:name), :id, :name,
-        {prompt: "Select"}, {multiple: true, size: 3, class: "form-control shadow rounded"}) %>
+        {prompt: "Select a Recipe Type"}, {multiple: true, size: 3, class: "form-select shadow rounded"}) %>
         </div>
       </div>
       <br>
         <%= f.submit(@recipe.new_record? ? "Create Recipe" : "Update Recipe", class:"link btn btn-outline-success") %>
         <% end %>
-      </div>   
+      </div>
+   
   
 </div>
+
 
