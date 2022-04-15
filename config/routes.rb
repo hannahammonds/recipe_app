@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   root 'pages#home'
   get 'about', to: 'pages#about'
   get 'index', to: 'recipes#index'
