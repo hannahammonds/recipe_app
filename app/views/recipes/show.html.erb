@@ -13,6 +13,17 @@
       <% if @recipe.kinds.any? %>
       <div><%= render @recipe.kinds %></div>
       <% end %>
+    <div class="row text-center">
+      <% if logged_in? && current_user %>
+      Recipe Rating: <%= rating_for @recipe, "recipe", disable_after_rate: true, imdb_avg: true, stars: 5 %>
+      <% end %>
+      <div class="small-2 large-2 columns">
+        <%= imdb_style_rating_for @recipe, current_user%>
+      </div>
+      <br>
+      <div class="small-2 large-4 columns">
+    </div>
+    </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><strong>Ingredients: </strong><%= @recipe.ingredients %></li>
       <li class="list-group-item"><strong>Instructions: </strong><%= @recipe.instructions %></li>
@@ -29,4 +40,3 @@
   </div>
   </div>
   <br>
-  
