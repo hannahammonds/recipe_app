@@ -15,7 +15,12 @@
       <% end %>
     <div class="row text-center">
       <% if logged_in? && current_user %>
-      Recipe Rating: <%= rating_for @recipe, "recipe", disable_after_rate: true, imdb_avg: true, stars: 5 %>
+      Recipe Rating: <%= rating_for @recipe, "recipe", stars: 5, 
+                                                       path: 'star_icons',
+                                                       cancel_place: 'right',
+                                                       disable_after_rate: true,
+                                                       imbd_ave: true
+           %>
       <% end %>
       <div class="small-2 large-2 columns">
         <%= imdb_style_rating_for @recipe, current_user%>
