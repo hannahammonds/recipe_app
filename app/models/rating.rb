@@ -1,3 +1,3 @@
 class Rating < ApplicationRecord 
-    has_many
+    belongs_to :recipes 
 end
