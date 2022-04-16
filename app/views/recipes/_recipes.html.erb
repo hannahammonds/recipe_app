@@ -10,6 +10,41 @@
             <div><%= render recipe.kinds %></div>
             <div class="card-body text-center">
                 <h5 class="card-title fs-3"><%= link_to "#{recipe.name}", recipe_path(recipe)%></h5>
+
+                <div class="recipe-review-container aria-disabled">
+                    <div class="component recipe-ratings">
+                        <a href="#" class="add-rating-reviews-link ugc-ratings-link review-stars-container embedded-auth-modal-trigger" data-login-url=""
+                                            data-tracking-do-not-follow="true">
+                        <span class="rating-star active" aria-hidden="true" data-rating="1">
+                            <svg width="24" height="24" viewBox=" 0 0 24 24" role="img" aria-label="1 - Couldn't eat it" xmlns="http://www.w3.org/2000/svg">
+                            <path class="rating-star-filled" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+                            </svg>
+                        </span>
+                        <span class="rating-star active" aria-hidden="true" data-rating="1">
+                            <svg width="24" height="24" viewBox=" 0 0 24 24" role="img" aria-label="2 - Didn't like it" xmlns="http://www.w3.org/2000/svg">
+                            <path class="rating-star-filled" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+                            </svg>
+                        </span>
+                        <span class="rating-star active" aria-hidden="true" data-rating="1">
+                            <svg width="24" height="24" viewBox=" 0 0 24 24" role="img" aria-label="3 - It was ok" xmlns="http://www.w3.org/2000/svg">
+                            <path class="rating-star-filled" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+                            </svg>
+                        </span>
+                        <span class="rating-star active" aria-hidden="true" data-rating="1">
+                            <svg width="24" height="24" viewBox=" 0 0 24 24" role="img" aria-label="4 - Like it" xmlns="http://www.w3.org/2000/svg">
+                            <path class="rating-star-filled" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+                            </svg>
+                        </span>
+                        <span class="rating-star active" aria-hidden="true" data-rating="1">
+                            <svg width="24" height="24" viewBox=" 0 0 24 24" role="img" aria-label="5 - Loved it" xmlns="http://www.w3.org/2000/svg">
+                            <path class="rating-star-filled" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+                            </svg>
+                        </span>
+
+                        </a>
+                    </div>
+                </div>
+
                 <p class="card-text">Ingredients: <%= recipe.ingredients %></p>
                 <p class="card-text">Instructions: <%= recipe.instructions %></p>
                 <%= link_to 'Show', recipe_path(recipe), class:"link btn btn-outline-warning" %>

@@ -13,6 +13,14 @@
       <% if @recipe.kinds.any? %>
       <div><%= render @recipe.kinds %></div>
       <% end %>
+      <td>
+      <ul class="rating">
+        <% (1..5).each do |i| %> 
+        <li class="rating_star"></li>
+        <% end %>
+      </ul>
+    </td>
+
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><strong>Ingredients: </strong><%= @recipe.ingredients %></li>
       <li class="list-group-item"><strong>Instructions: </strong><%= @recipe.instructions %></li>
