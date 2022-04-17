@@ -1,5 +1,5 @@
 class RatingController < ApplicationRecord 
-    before_action :require_user
+    before_action :require_user 
 
     def new 
         @rating = Rating.new 

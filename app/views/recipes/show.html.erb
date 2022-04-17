@@ -14,7 +14,7 @@
       <div><%= render @recipe.kinds %></div>
       <% end %>
       <td>
-      <ul class="rating">
+      <ul class="rating"> <%= link_to ...ratings_new %>
         <% (1..5).each do |i| %> 
         <li class="rating_star"></li>
         <% end %>
