@@ -3,23 +3,18 @@ class RatingsController < ApplicationController
 
     def new
         @rating = Rating.new 
-        params [:recipe_id] 
+        params[:recipe_id] 
     end
 
     def create 
-        @rating = Rating.new(rating_params)  
+        @rating = Rating.new  
+        
         if @rating.save 
             flash[:notice] = "Thank you for rating this recipe!"
             redirect_to recipes_path 
         else 
             render 'new'
         end
-    end  
-    
-
-    private
-        def rating_params 
-            params.require(:rating)
-        end
+    end 
 
 end
