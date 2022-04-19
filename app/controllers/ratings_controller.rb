@@ -1,13 +1,13 @@
-class RatingController < ApplicationRecord 
+class RatingsController < ApplicationController 
     before_action :require_user 
 
-    def new 
+    def new
         @rating = Rating.new 
+        params [:recipe_id] 
     end
 
     def create 
-        @rating = Rating.new(rating_params)
-        @rating.user = helpers.current_user && !recipe.user  
+        @rating = Rating.new(rating_params)  
         if @rating.save 
             flash[:notice] = "Thank you for rating this recipe!"
             redirect_to recipes_path 
