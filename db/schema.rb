@@ -66,8 +66,9 @@ ActiveRecord::Schema.define(version: 2022_04_16_181927) do
     t.index ["cacheable_type", "cacheable_id"], name: "index_rating_caches_on_cacheable"
   end
 
-  create_table "rating_tables", force: :cascade do |t|
+  create_table "ratings", force: :cascade do |t|
     t.integer "recipe_id"
+    t.integer "user_id"
     t.float "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
